@@ -48,14 +48,15 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="home-app">
+         <img src="https://www.sofka.com.co/wp-content/uploads/2021/02/sofkau-logo-horizontal.png"/>
         <form
           className="mt-5 py-5 px-5"
           autoComplete="off"
           onSubmit={this.handleSubmit}
         >
           <h1>
-            Login to
+            Iniciar Sesión
             <Link className="title ml-2" to="/">
               Chatty
             </Link>
@@ -63,7 +64,7 @@ export default class Login extends Component {
           <p className="lead">
             Complete el siguiente formulario para iniciar sesión en su cuenta.
           </p>
-          <div className="form-group">
+          <div className="form-group container-input">
             <input
               className="form-control"
               placeholder="Email"
@@ -72,9 +73,7 @@ export default class Login extends Component {
               onChange={this.handleChange}
               value={this.state.email}
             />
-          </div>
-          <div className="form-group">
-            <input
+             <input
               className="form-control"
               placeholder="Password"
               name="password"
@@ -83,16 +82,15 @@ export default class Login extends Component {
               type="password"
             />
           </div>
-          <div className="form-group">
+          
             {this.state.error ? <p className="text-danger">{this.state.error}</p> : null}
-            <button className="btn btn-primary px-5" type="submit">Login</button>
-          </div>
-            <p>Or</p>
-            <button className="btn btn-danger mr-2" onClick={this.googleSignIn} type="button">
-              Sign in with Google
+            <button className="boton-login px-5" type="submit">Iniciar</button>
+          
+            <button className="boton-crear" onClick={this.googleSignIn} type="button">
+            Iniciar sesión con Google
             </button>
-            <button className="btn btn-secondary" type="button" onClick={this.githubSignIn}>
-              Sign in with GitHub
+            <button className="boton-crear" type="button" onClick={this.githubSignIn}>
+            Sign in with GitHub
             </button>
           <hr />
           <p>

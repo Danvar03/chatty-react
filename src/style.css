@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 
 body {
+  background-image: url("https://p4.wallpaperbetter.com/wallpaper/621/165/319/hexagon-minimalism-wallpaper-preview.jpg");
   font-family: 'Poppins', sans-serif;
-  background-color: #fcfcfc;
+  height: 100%;
+  background-color: #fcfcfc2d;
 }
+
 
 .chat-area, .home {
   margin-top: 60px;
@@ -12,9 +15,10 @@ body {
 .chat-area {
   content: center;
   padding: 20px;
-  height: 400px;
-  width:800px;
+  height: 50%;
+  width: 100%;
   overflow-y: scroll;
+
 }
 
 .chat-area .chat-bubble {
@@ -38,6 +42,8 @@ body {
 
 .form-control {
   width: 60%;
+  margin-left: 100px;
+  height: 50px;
 }
 
 .form-control:focus {
@@ -57,6 +63,63 @@ body {
   width: 40px;
   border-radius: 15px;
 }
+.boton-crear {
+  margin-right: 12px;
+  outline: none;
+  padding: 9px;
+  border: none; 
+  text-decoration: none;
+  background: #0d386d;
+  color: white;
+  border-radius: 6px;
+}
+.boton-login {
+  margin-right: 12px;
+  margin-bottom: 10pxs;
+  outline: none;
+  padding: 9px;
+  border: none; 
+  text-decoration: none;
+  background: #0a7934;
+  color: white;
+  border-radius: 6px;
+}
+
+.boton-cerrar {
+  margin-right: 12px;
+  margin-bottom: 10pxs;
+  outline: none;
+  padding: 9px;
+  border: none; 
+  text-decoration: none;
+  background: #bb280f;
+  color: white;
+  border-radius: 6px;
+}
+
+.chat{  
+    margin: 20px;
+   
+    background: #76777c;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.home-app{
+  text-align: center;
+    margin: 20px;
+    margin-top: 150px;
+    background: #e0e2ee;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+.container-input input{
+  margin-bottom: 14px;
+  }
+  .container-input {
+    padding-bottom: 20px;
+  }
+
 
 @media screen and (max-width: 767px) {
   .form-control {
@@ -66,4 +129,5 @@ body {
   .chat-area .chat-bubble {
     max-width: 250px;
   }
+  
 }

@@ -48,14 +48,16 @@ export default class SignUp extends Component {
 
   render() {
     return (
-      <div>
+      
+      <div className="home-app">
+       <img src="https://www.sofka.com.co/wp-content/uploads/2021/02/sofkau-logo-horizontal.png"/>
         <form className="mt-5 py-5 px-5" onSubmit={this.handleSubmit}>
           <h1>
-            Sign Up to
+            REGISTRATE
             <Link className="title ml-2" to="/">Chatty</Link>
           </h1>
           <p className="lead">Complete el formulario para crear una cuenta.</p>
-          <div className="form-group">
+          <div className="form-group container-input">
             <input
               className="form-control"
               placeholder="Email"
@@ -64,8 +66,6 @@ export default class SignUp extends Component {
               onChange={this.handleChange}
               value={this.state.email}
             ></input>
-          </div>
-          <div className="form-group">
             <input
               className="form-control"
               placeholder="Password"
@@ -74,21 +74,21 @@ export default class SignUp extends Component {
               value={this.state.password}
               type="password"
             ></input>
-          </div>
+          </div>          
           <div>
             {this.state.error ? <p>{this.state.error}</p> : null}
-            <button className="btn btn-primary px-5" type="submit">Sign up</button>
-            <p>Or</p>
-            <button className="btn btn-danger mr-2" onClick={this.googleSignIn} type="button">
-              Sign up with Google
+            <button className="boton-crear" type="submit">Registrar Email</button>
+          
+            <button className="boton-crear" onClick={this.googleSignIn} type="button">
+              Registrar con Google
             </button>
-            <button className="btn btn-secondary" type="button" onClick={this.githubSignIn}>
-              Sign up with GitHub
+            <button className="boton-crear" type="button" onClick={this.githubSignIn}>
+            Registrar sesión GitHub
             </button>
           </div>
           <hr></hr>
           <p>
-            Already have an account? <Link to="/login">Login</Link>
+          Ya tienes una cuenta? <Link to="/login">Iniciar sesión</Link>
           </p>
         </form>
       </div>

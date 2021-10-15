@@ -47,7 +47,36 @@ export default class Chat extends Component {
     });
   }
 
+  async handleSubmit(event) {
+    event.preventDefault();
+    this.setState({ writeError: null });
+    const chatArea = this.myRef.current;
+    //Guardar la imagen
+    //Para ello hare una validacion ternaria
+    let imagedef = "https://definicion.de/wp-content/uploads/2019/06/perfildeusuario.jpg";
+    let image =
+      this.state.user.photoURL === null
+        ? imagedef
+        : this.state.user.photoURL;
 
+    //Para obtener parte inicial y ponerla como usuario
+    let useremail = this.state.user.email;
+    let spliteo = useremail.split("@");
+    let userend = spliteo[0];
+    try {
+      await db.ref("chats").push({
+        content: this.state.content,
+        timestamp: Date.now(),
+        uid: this.state.user.uid,
+        user: userend,
+        image :image,
+      });
+      this.setState({ content: "" });
+      chatArea.scrollBy(0, chatArea.scrollHeight);
+    } catch (error) {
+      this.setState({ writeError: error.message });
+    }
+  }
 
   formatTime(timestamp) {
     const d = new Date(timestamp);
@@ -59,7 +88,8 @@ export default class Chat extends Component {
 
   render() {
     return (
-      <div>
+      <div div className="chat">
+         <img src="https://www.sofka.com.co/wp-content/uploads/2021/02/sofkau-logo-horizontal.png"/>
         <Header />
         <div className="chat-area" ref={this.myRef}>
           {/* loading indicator */}
@@ -102,8 +132,8 @@ export default class Chat extends Component {
           {this.state.error ? (
             <p className="text-danger">{this.state.error}</p>
           ) : null}
-          <button type="submit" className="btn btn-submit px-5 mt-4">
-            Send
+          <button  className="boton-login" type="submit" className="btn btn-submit px-5 mt-4">
+            ENVIAR
           </button>
         </form>
         <div className="py-5 mx-3">
