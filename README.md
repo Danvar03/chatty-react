@@ -1,6 +1,8 @@
 # URL 
 
-https://github.com/Danvar03/chatty-react
+Se realiza despliegue en firebase 
+
+https://chatty-8fdfb.web.app/
 
 # Getting Started with Create React App
 
