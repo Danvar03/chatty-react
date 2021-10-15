@@ -47,36 +47,7 @@ export default class Chat extends Component {
     });
   }
 
-  async handleSubmit(event) {
-    event.preventDefault();
-    this.setState({ writeError: null });
-    const chatArea = this.myRef.current;
-    //Guardar la imagen
-    //Para ello hare una validacion ternaria
-    let imagedef = "https://definicion.de/wp-content/uploads/2019/06/perfildeusuario.jpg";
-    let image =
-      this.state.user.photoURL === null
-        ? imagedef
-        : this.state.user.photoURL;
 
-    //Para obtener parte inicial y ponerla como usuario
-    let useremail = this.state.user.email;
-    let spliteo = useremail.split("@");
-    let userend = spliteo[0];
-    try {
-      await db.ref("chats").push({
-        content: this.state.content,
-        timestamp: Date.now(),
-        uid: this.state.user.uid,
-        user: userend,
-        image :image,
-      });
-      this.setState({ content: "" });
-      chatArea.scrollBy(0, chatArea.scrollHeight);
-    } catch (error) {
-      this.setState({ writeError: error.message });
-    }
-  }
 
   formatTime(timestamp) {
     const d = new Date(timestamp);
