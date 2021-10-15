@@ -1,18 +1,18 @@
-import firebase from "firebase/app";
-import "firebase/auth";
+import firebase from 'firebase/app'
+import 'firebase/firestore'
+import 'firebase/auth'
 import "firebase/database";
 
-
-const config = {
-    apiKey: "AIzaSyDC1k-nifctQNU7B0W7Ia5r0qRUea8qx4Y",
-    authDomain: "chatty-57e3b.firebaseapp.com",
-    databaseURL: "https://chatty-3367e-default-rtdb.firebaseio.com/",
-    projectId: "chatty-57e3b",
-    storageBucket: "chatty-57e3b.appspot.com",
-    messagingSenderId: "58299113557",
-    appId: "1:58299113557:web:605f948502b53e364574dc",
-    //measurementId: "G-YT6B82R12R"
+const firebaseConfig = {
+  apiKey: "AIzaSyDx7KE8YH9NvjD_F-LnsLoFJVmVGnVMjcE",
+  authDomain: "chatty-8fdfb.firebaseapp.com",
+  databaseURL: "https://chatty-8fdfb-default-rtdb.firebaseio.com/",
+  projectId: "chatty-8fdfb",
+  storageBucket: "chatty-8fdfb.appspot.com",
+  messagingSenderId: "1040375649949",
+  appId: "1:1040375649949:web:547a22b17f1d178647a674"
 };
-firebase.initializeApp(config);
+
+   firebase.initializeApp(firebaseConfig);
 export const auth = firebase.auth;
 export const db = firebase.database();

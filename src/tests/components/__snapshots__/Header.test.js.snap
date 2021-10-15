@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas del componente <Header/> Comprobar que corra el componente 1`] = `
+<header>
+  <nav
+    className="navbar navbar-expand-sm fixed-top navbar-light bg-light"
+  >
+    <Link
+      className="navbar-brand"
+      to="/"
+    >
+      Chatty
+    </Link>
+    <button
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      className="navbar-toggler"
+      data-target="#navbarNavAltMarkup"
+      data-toggle="collapse"
+      type="button"
+    >
+      <span
+        className="navbar-toggler-icon"
+      />
+    </button>
+    <div
+      className="collapse navbar-collapse justify-content-end"
+      id="navbarNavAltMarkup"
+    >
+      <div
+        className="navbar-nav"
+      >
+        <Link
+          className="nav-item nav-link mr-3"
+          to="/login"
+        >
+          Sign In
+        </Link>
+        <Link
+          className="nav-item nav-link mr-3"
+          to="/signup"
+        >
+          Sign Up
+        </Link>
+      </div>
+    </div>
+  </nav>
+</header>
+`;
