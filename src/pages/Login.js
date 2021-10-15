@@ -58,7 +58,7 @@ export default class Login extends Component {
           <h1>
             Iniciar Sesión
             <Link className="title ml-2" to="/">
-              Chatty
+              Chatty Daniela Vargas
             </Link>
           </h1>
           <p className="lead">
