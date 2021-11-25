@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { signin, signInWithGoogle, signInWithGitHub } from "../helpers/auth";
+import alertifyjs from "alertifyjs"
 
 export default class Login extends Component {
   constructor(props) {
@@ -23,10 +24,11 @@ export default class Login extends Component {
 
   async handleSubmit(event) {
     event.preventDefault();
-    this.setState({ error: "" });
+    this.setState({ error: " " });
     try {
       await signin(this.state.email, this.state.password);
     } catch (error) {
+      alertifyjs.error('Login obligatorio')
       this.setState({ error: error.message });
     }
   }
@@ -35,6 +37,7 @@ export default class Login extends Component {
     try {
       await signInWithGoogle();
     } catch (error) {
+      
       this.setState({ error: error.message });
     }
   }

@@ -50,7 +50,7 @@ export default class SignUp extends Component {
     return (
       
       <div className="home-app">
-       <img src="https://www.sofka.com.co/wp-content/uploads/2021/02/sofkau-logo-horizontal.png"/>
+       
         <form className="mt-5 py-5 px-5" onSubmit={this.handleSubmit}>
           <h1>
             REGISTRATE
